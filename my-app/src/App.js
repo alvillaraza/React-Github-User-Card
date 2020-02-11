@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       users: []
     };
-    console.log("constructor is running");
+    // console.log("constructor is running");
   }
 
   componentDidMount() {
@@ -25,10 +25,13 @@ class App extends React.Component {
     .catch(err => console.log("err"));
   }
 
+
+
   render () {
   return (
     <div className="App">
       <header className="App-header">
+        {/* {console.log("App.js", this.state.users)} */}
        <UserCard userCard={this.state.users} />
       </header>
     </div>
