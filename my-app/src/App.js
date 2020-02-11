@@ -17,6 +17,7 @@ class App extends React.Component {
     axios
     .get('https://api.github.com/users/alvillaraza')
     .then(res => {
+      // console.log(res);
       this.setState({
         users: res.data
     });
@@ -28,7 +29,7 @@ class App extends React.Component {
   return (
     <div className="App">
       <header className="App-header">
-       <UserCard />
+       <UserCard userCard={this.state.users} />
       </header>
     </div>
   );
