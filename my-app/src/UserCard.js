@@ -23,12 +23,13 @@ class UserCard extends Component {
         })
         .catch(err => console.log('error'));
     }
+
   
 
     render() {
         return (
             <div className='my-card'>
-                {console.log("UserCard.js", this.state)}
+                {/* {console.log("UserCard.js", this.state)} */}
                 <img src={this.props.userCard.avatar_url} alt={`Profile of ${this.props.userCard.name}`} />
                 <h2>{this.props.userCard.name}</h2>
                 <p>{this.props.userCard.location}</p>

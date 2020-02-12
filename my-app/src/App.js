@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import UserCard from './UserCard';
+import Search from './Search';
 
 import './App.css';
 
@@ -25,14 +26,17 @@ class App extends React.Component {
     .catch(err => console.log("err"));
   }
 
+ 
 
 
   render () {
   return (
     <div className="App">
       <header className="App-header">
+       <Search />
         {/* {console.log("App.js", this.state.users)} */}
        <UserCard userCard={this.state.users} />
+
       </header>
     </div>
   );
