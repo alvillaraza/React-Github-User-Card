@@ -15,6 +15,23 @@ console.log('mount')
     }
 
     componentDidUpdate(){
+        // axios
+        // .get(`https://api.github.com/users/${this.state.searchInput}`)
+        // .then(res => {
+        //     this.setState({
+        //         searchResult: res.data.name
+        //     })
+        // })
+    }
+
+    handleChanges = e => {
+        this.setState({
+            searchInput: e.target.value
+        });
+    }
+
+    findUser = e => {
+        e.preventDefault();
         axios
         .get(`https://api.github.com/users/${this.state.searchInput}`)
         .then(res => {
@@ -24,18 +41,12 @@ console.log('mount')
         })
     }
 
-    handleChanges = e => {
-        this.setState({
-            searchInput: e.target.value
-        });
-    }
-
     render() {
         return (
             <div>
               <input type='text' name='text' value={this.state.members} onChange={this.handleChanges} />
 
-              <h1>{this.state.searchResult}</h1>
+              <button onClick={this.findUser}>Find User</button>
             </div>
         )
     }
