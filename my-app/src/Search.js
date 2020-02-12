@@ -47,6 +47,7 @@ console.log('mount')
               <input type='text' name='text' value={this.state.members} onChange={this.handleChanges} />
 
               <button onClick={this.findUser}>Find User</button>
+              <h1>{this.state.searchResult}</h1>
             </div>
         )
     }
