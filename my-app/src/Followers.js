@@ -1,26 +1,26 @@
 import React from 'react';
 import {
     Card, CardImg, CardBody,
-    CardTitle, CardSubtitle, Row, Col
+    CardTitle, Row, Col
   } from 'reactstrap';
 
 function Followers(props) {
     return (
         <Row>
-        <Col xs="12" md="6" xl="3">
-            <Card>
             {props.followers.map(follower => (
+        <Col xl="3" md="6" sm="12">
+            <Card>
                 <CardBody>
                 <div key={follower.id}>
-                <CardImg top width='100%' src={follower.avatar_url} alt={`profile of ${follower.name}`} />
-                <CardTitle>{follower.login}</CardTitle>
-                <CardSubtitle>{follower.html_url}</CardSubtitle>
+                <CardImg src={follower.avatar_url} alt={`profile of ${follower.name}`} />
+                <CardTitle><a href={follower.html_url}>{follower.login}</a></CardTitle>
+                
                 </div>
               </CardBody>
-            ))}
             </Card>
       
         </Col>
+            ))}
       </Row>
     );
 }
